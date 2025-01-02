@@ -1,16 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
+import './index.css'
 import App from './App.jsx'
-function Myapp(){
-  return(
-    <div>
-      <h1>custom app</h1>
-    </div>
-  )
-}
+import { Provider } from 'react-redux'
+import {store} from './app/store.js'
+
 createRoot(document.getElementById('root')).render(
-  
-    <Myapp />
-  
+  <Provider store={store}>
+    <App />
+  </Provider>,
 )
